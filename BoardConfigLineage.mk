@@ -9,4 +9,8 @@ TARGET_KERNEL_SOURCE := kernel/google/marlin
 # Telephony
 TARGET_PROVIDES_TELEPHONY_EXT := true
 
+# maru
+# Override kernel config
+TARGET_KERNEL_CONFIG := maru_marlin_defconfig
+# -include vendor/google/marlin/BoardConfigVendor.mk
 -include vendor/google/marlin/BoardConfigVendor.mk

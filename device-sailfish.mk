@@ -69,3 +69,6 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprint.sailfish
+
+# maru
+$(call inherit-product, vendor/maruos/device-maru.mk)

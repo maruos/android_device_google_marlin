@@ -84,6 +84,13 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 10737418240
 BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
+# maru
+# ~314MB vendor image. Why 314MB? Use busybox fdisk -l /dev/block/sda32
+# in adb shell to get the size.
+# Why /dev/block/sda32? Use mount | grep vendor in adb shell to get
+# the block of vendor.
+BOARD_VENDORIMAGE_PARTITION_SIZE := 314572800
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
@@ -101,6 +108,9 @@ ifneq ($(filter sailfish sailfishf, $(TARGET_PRODUCT)),)
 BOARD_SEPOLICY_DIRS += device/google/marlin/sepolicy/verizon
 endif
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := device/google/marlin/sepolicy/private
+
+# maru
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += vendor/maruos/sepolicy
 
 BOARD_EGL_CFG := device/google/marlin/egl.cfg
 
