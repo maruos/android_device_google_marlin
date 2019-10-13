@@ -70,5 +70,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fingerprint.sailfish
 
-# maru
+# region @maru
 $(call inherit-product, vendor/maruos/device-maru.mk)
+# endregion

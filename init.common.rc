@@ -1,5 +1,6 @@
-# maru
+# region @maru
 import init.maru.rc
+# endregion
 
 on charger
     write /sys/devices/system/cpu/cpu2/online 0

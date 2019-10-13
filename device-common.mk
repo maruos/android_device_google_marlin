@@ -303,10 +303,11 @@ PRODUCT_COPY_FILES += \
     device/google/marlin/init.foreground.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.foreground.sh \
     device/google/marlin/init.qcom.devstart.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.devstart.sh
 
-# maru
+# region @maru
 PRODUCT_COPY_FILES += \
     device/google/marlin/init.common.rc:root/init.sailfish.rc \
     device/google/marlin/init.common.rc:root/init.marlin.rc
+# endregion
 
 # Reduce client buffer size for fast audio output tracks
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -318,9 +319,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Write Manufacturer & Model information in created media files.
 # IMPORTANT: ONLY SET THIS PROPERTY TO TRUE FOR PUBLIC DEVICES
-# maru
+# region @maru
 # ifneq ($(filter lineage_sailfish% aosp_sailfish% sailfish% lineage_marlin% aosp_marlin% marlin%, $(TARGET_PRODUCT)),)
-ifneq ($(filter lineage_sailfish% aosp_sailfish% sailfish% lineage_marlin% aosp_marlin% marlin% maru_sailfish%, $(TARGET_PRODUCT)),)
+ifneq ($(filter lineage_sailfish% aosp_sailfish% sailfish% lineage_marlin% aosp_marlin% marlin% maru_%, $(TARGET_PRODUCT)),)
+# endregion
 PRODUCT_PROPERTY_OVERRIDES += \
     media.recorder.show_manufacturer_and_model=true
 else
