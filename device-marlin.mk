@@ -69,3 +69,7 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprint.marlin
+
+# region @maru
+$(call inherit-product, vendor/maruos/device-maru.mk)
+# endregion

@@ -94,6 +94,10 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 10737418240
 BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
+# region @maru
+BOARD_VENDORIMAGE_PARTITION_SIZE := 314572800
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+# endregion
 
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
@@ -111,6 +115,10 @@ ifneq ($(filter marlin marlinf, $(TARGET_PRODUCT)),)
 BOARD_SEPOLICY_DIRS += device/google/marlin/sepolicy/verizon
 endif
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := device/google/marlin/sepolicy/private
+
+# region @maru
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += vendor/maruos/sepolicy
+# endregion
 
 BOARD_EGL_CFG := device/google/marlin/egl.cfg
 
