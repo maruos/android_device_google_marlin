@@ -307,6 +307,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/google/marlin/init.common.rc:root/init.sailfish.rc \
     device/google/marlin/init.common.rc:root/init.marlin.rc
+
+PRODUCT_PACKAGES += override_system_compatibility_matrix.xml
 # endregion
 
 # Reduce client buffer size for fast audio output tracks
