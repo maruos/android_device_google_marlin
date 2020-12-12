@@ -18,6 +18,10 @@
 #
 # Everything in this directory will become public
 
+# Maru, ignoring SELINUX Neverallows
+SELINUX_IGNORE_NEVERALLOWS := true
+
+
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := device/google/marlin-kernel/Image.lz4-dtb
 else
