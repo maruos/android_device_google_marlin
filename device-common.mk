@@ -18,6 +18,10 @@
 #
 # Everything in this directory will become public
 
+# Maru, ignoring SELINUX Neverallows
+SELINUX_IGNORE_NEVERALLOWS := true
+
+
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := device/google/marlin-kernel/Image.lz4-dtb
 else
@@ -324,7 +328,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Write Manufacturer & Model information in created media files.
 # IMPORTANT: ONLY SET THIS PROPERTY TO TRUE FOR PUBLIC DEVICES
-ifneq ($(filter lineage_sailfish% aosp_sailfish% sailfish% lineage_marlin% aosp_marlin% marlin%, $(TARGET_PRODUCT)),)
+ifneq ($(filter lineage_sailfish% maru_% aosp_sailfish% sailfish% lineage_marlin% aosp_marlin% marlin%, $(TARGET_PRODUCT)),)
 PRODUCT_PROPERTY_OVERRIDES += \
     media.recorder.show_manufacturer_and_model=true
 else
